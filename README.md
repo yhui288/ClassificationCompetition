@@ -5,7 +5,7 @@ Dataset format:
 Each line contains a JSON object with the following fields : 
 - ***response*** :  the Tweet to be classified
 - ***context*** : the conversation context of the ***response***
-	- Note, the context is an ordered list of dialogue, i.e., if the context contains three elements, `c1`, `c2`, `c3`, in that order, then `c2` is a reply to `c1` and `c3` is a reply to `c2`. Further, the Tweet to be classified is a reply to `c3`.
+	- Note, the context is an ordered list of dialogue, i.e., if the context contains three elements, `c1`, `c2`, `c3`, in that order, then `c2` is a reply to `c1` and `c3` is a reply to `c2`. Further, the Tweet to be classified (response) is a reply to `c3`.
 - ***label*** : `SARCASM` or `NOT_SARCASM` 
 
 - ***id***:  String identifier for sample. This id will be required when making submissions. (ONLY in test data)
