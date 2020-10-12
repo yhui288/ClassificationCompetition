@@ -1,4 +1,4 @@
-{ "prescript_commands": [ "pip install --upgrade requests sklearn"
+{ "prescript_commands": [ "pip install --upgrade requests numpy==1.14 scipy==1.2 scikit-learn==0.20"
 ],
     "entrypoint": "classification_grader"
 }
