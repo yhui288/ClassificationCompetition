@@ -6,11 +6,9 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
 
 text_clf = Pipeline([
-    ('vect', CountVectorizer()),
+    ('vect', CountVectorizer(stop_words='english')),
     ('tfidf', TfidfTransformer()),
-    ('clf', SGDClassifier(loss='hinge', penalty='l2',
-    alpha=1e-3, random_state=42,
-    max_iter=10, tol=None)),
+    ('clf', LogisticRegression()),
 ])
 
 train_data = []
