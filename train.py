@@ -4,11 +4,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import SGDClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 text_clf = Pipeline([
     ('vect', CountVectorizer(stop_words='english')),
     ('tfidf', TfidfTransformer()),
-    ('clf', LogisticRegression()),
+    ('clf', RandomForestClassifier(n_estimators=1000, random_state=0)),
 ])
 
 train_data = []
