@@ -3,13 +3,14 @@ import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import SGDClassifier
 
 text_clf = Pipeline([
     ('vect', CountVectorizer()),
     ('tfidf', TfidfTransformer()),
-    ('clf', MultinomialNB()),
+    ('clf', SGDClassifier(loss='hinge', penalty='l2',
+    alpha=1e-3, random_state=42,
+    max_iter=15, tol=None)),
 ])
 
 train_data = []
